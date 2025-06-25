@@ -49,14 +49,12 @@ Download historical stock data for your chosen ticker (e.g., AAPL) from Yahoo Fi
 Go to finance.yahoo.com.
 Search for the ticker (e.g., AAPL).
 Navigate to "Historical Data", set the date range from January 1, 2015, to December 31, 2024, and download the CSV.
+This will be automatically done when the code is set to run.
 
 
-Rename the file to {ticker}.us.txt (e.g., aapl.us.txt).
-Place the file in a Stocks directory within the project folder (e.g., C:\Users\akshi\mps\new\Stocks\aapl.us.txt).
 
 
-Create the Stocks Directory:
-mkdir Stocks
+
 
 
 Set Up ChromeDriver for backend.py:
@@ -67,7 +65,7 @@ Place it in C:\Users\akshi\mps\chromedriver.exe (or update the path in backend.p
 
 Place the Scripts:
 
-Save both predict_price.py and backend.py in your project directory (e.g., C:\Users\akshi\mps\new\).
+Save both predict_price.py and backend.py in your project directory (e.g., C:\Users\akshi\mps\).
 
 
 
@@ -82,7 +80,7 @@ The script will run a server on http://0.0.0.0:8000.
 Make a request to the /analyze-sentiment endpoint with your ticker:curl "http://localhost:8000/analyze-sentiment?ticker=AAPL"
 
 
-This will scrape recent articles from Yahoo Finance, compute sentiment scores using FinBERT, and save the results to C:\Users\akshi\mps\new\sentiment_analysis_results.csv.
+This will scrape recent articles from Yahoo Finance, compute sentiment scores using FinBERT, and save the results to C:\Users\akshi\mps\sentiment_analysis_results.csv.
 
 
 Run the Prediction Script (predict_price.py):
@@ -188,7 +186,7 @@ Troubleshooting
 
 FileNotFoundError:
 Ensure the historical data file (e.g., Stocks/aapl.us.txt) exists with the correct columns (Date, Open, High, Low, Close).
-Ensure sentiment_analysis_results.csv exists in C:\Users\akshi\mps\new\ after running backend.py.
+Ensure sentiment_analysis_results.csv exists in C:\Users\akshi\mps\ after running backend.py.
 
 
 Rate Limit Errors: If Yahoo Finance rate limits persist in either script, wait 30-60 minutes or adjust the fetch parameters (e.g., reduce the date range).
