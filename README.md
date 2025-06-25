@@ -168,6 +168,15 @@ Predicted mid-price for 2025-06-09: 178.79
 Base prediction: 175.29, Sentiment adjustment: 3.50
 [Plot of historical and predicted mid-prices]
 
+Steps to Run:
+Navigate to the main directory (eg:., C:\Users\akshi\mps\)
+Run the command: python backend.py
+Now in a different powershell, navigate to the front-end directory (eg:.,  C:\Users\akshi\mps\market-vision-insights-hub)
+Run the command: npm run dev. This will run the interface on localhost (eg:., Local:   http://localhost:8080/)
+Click the link to view results on UI
+Create another powershell and navigate to the main directory to run: python predict_price.py
+The results are now displayed on the web browser
+
 Notes
 
 Rate Limits: The predict_price.py script includes retry logic for Yahoo Finance rate limits (5 retries, 5-minute delay). If the rate limit persists, wait 30-60 minutes and try again, or rely on historical data only (predictions will be less accurate). The backend.py also handles fetch failures with retries.
